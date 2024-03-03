@@ -36,18 +36,18 @@ public class SumasAleatorias {
         marco.add(panelNorte, BorderLayout.NORTH);
 
         // Panel centro
-        JPanel panelCentro = new JPanel(new FlowLayout());
+        JPanel panelCentro = new JPanel(new FlowLayout(FlowLayout.CENTER,20, 0));
         JButton boton1 = new JButton("Generar");
         panelCentro.add(boton1);
         JButton boton2 = new JButton("Verificar");
         panelCentro.add(boton2);
         JButton boton3 = new JButton("Salir");
         panelCentro.add(boton3);
-        panelCentro.setBorder(new EmptyBorder(10, 10, 10, 10));
+        panelCentro.setBorder(new EmptyBorder(10, 0, 10, 0));
         marco.add(panelCentro, BorderLayout.CENTER);
 
         // Panel sur
-        JPanel panelSur = new JPanel(new FlowLayout());
+        JPanel panelSur = new JPanel(new FlowLayout(FlowLayout.CENTER,10,0));
         JLabel etiqueta4 = new JLabel("Intentos: ");
         panelSur.add(etiqueta4);
         JLabel etiqueta5 = new JLabel(String.valueOf(intentos));
@@ -60,7 +60,7 @@ public class SumasAleatorias {
         panelSur.add(etiqueta8);
         JLabel etiqueta9 = new JLabel(String.valueOf(fallados));
         panelSur.add(etiqueta9);
-        panelSur.setBorder(new EmptyBorder(10, 10, 10, 10));
+        panelSur.setBorder(new EmptyBorder(10, 0, 10, 0));
         marco.add(panelSur, BorderLayout.SOUTH);
 
         // Listeners
