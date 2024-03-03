@@ -6,20 +6,9 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 public class SumasAleatorias {
-    private static int intentos = 0;
-    private static int aciertos = 0;
-    private static int fallados = 0;
-
-    JTextField cuadro1 = new JTextField(10);
-    JTextField cuadro2 = new JTextField(10);
-    JTextField cuadro3 = new JTextField(10);
-
-    // Etiqueta para mostrar el número de intentos
-    JLabel etiqueta5 = new JLabel(String.valueOf(intentos));
-    // Etiqueta para mostrar el número de aciertos
-    JLabel etiqueta7 = new JLabel(String.valueOf(aciertos));
-    // Etiqueta para mostrar el número de fallos
-    JLabel etiqueta9 = new JLabel(String.valueOf(fallados));
+    private int intentos = 0;
+    private int aciertos = 0;
+    private int fallados = 0;
 
     public SumasAleatorias() {
         JFrame marco = new JFrame("Adivina el resultado de la suma");
@@ -30,17 +19,17 @@ public class SumasAleatorias {
         JPanel panelNorte = new JPanel(new FlowLayout());
         JLabel etiqueta1 = new JLabel("Número 1: ");
         panelNorte.add(etiqueta1);
-
+        JTextField cuadro1 = new JTextField(10);
         cuadro1.setHorizontalAlignment(SwingConstants.RIGHT);
         panelNorte.add(cuadro1);
         JLabel etiqueta2 = new JLabel("Número 2: ");
         panelNorte.add(etiqueta2);
-
+        JTextField cuadro2 = new JTextField(10);
         cuadro2.setHorizontalAlignment(SwingConstants.RIGHT);
         panelNorte.add(cuadro2);
         JLabel etiqueta3 = new JLabel("Resultado: ");
         panelNorte.add(etiqueta3);
-
+        JTextField cuadro3 = new JTextField(10);
         cuadro3.setHorizontalAlignment(SwingConstants.RIGHT);
         panelNorte.add(cuadro3);
         panelNorte.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -61,15 +50,15 @@ public class SumasAleatorias {
         JPanel panelSur = new JPanel(new FlowLayout());
         JLabel etiqueta4 = new JLabel("Intentos: ");
         panelSur.add(etiqueta4);
-
+        JLabel etiqueta5 = new JLabel(String.valueOf(intentos));
         panelSur.add(etiqueta5);
         JLabel etiqueta6 = new JLabel("Aciertos: ");
         panelSur.add(etiqueta6);
-
+        JLabel etiqueta7 = new JLabel(String.valueOf(aciertos));
         panelSur.add(etiqueta7);
         JLabel etiqueta8 = new JLabel("Fallados: ");
         panelSur.add(etiqueta8);
-
+        JLabel etiqueta9 = new JLabel(String.valueOf(fallados));
         panelSur.add(etiqueta9);
         panelSur.setBorder(new EmptyBorder(10, 10, 10, 10));
         marco.add(panelSur, BorderLayout.SOUTH);
