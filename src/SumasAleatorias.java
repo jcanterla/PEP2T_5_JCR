@@ -81,13 +81,12 @@ public class SumasAleatorias {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!presionado) {
-                    JOptionPane.showMessageDialog(null, "¡Error! Debes generar una suma primero");
+                    JOptionPane.showMessageDialog(null, "¡Error! Debes generar una suma primero", "Error", JOptionPane.ERROR_MESSAGE);
                 }else {
                     do {
                         String resultado = JOptionPane.showInputDialog("Teclea tu resultado");
                         if (resultado != null && !resultado.isEmpty()){
                             etiqueta5.setText(String.valueOf(intentos));
-
                             try {
                                 int num1 = Integer.parseInt(cuadro1.getText());
                                 int num2 = Integer.parseInt(cuadro2.getText());
@@ -105,7 +104,7 @@ public class SumasAleatorias {
                                 }
                                 break;
                             }catch (NumberFormatException ex) {
-                                JOptionPane.showMessageDialog(null, "¡Error! Debes introducir un número entero");
+                                JOptionPane.showMessageDialog(null, "¡Error! Debes introducir un número entero", "Error", JOptionPane.ERROR_MESSAGE);
                             }
                         }else {
                             break;
