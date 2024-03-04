@@ -125,6 +125,8 @@ public class SumasAleatorias {
         });
 
         marco.pack();
+        marco.setLocationRelativeTo(null);
+        marco.setResizable(false);
     }
 
 }
