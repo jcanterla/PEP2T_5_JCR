@@ -9,6 +9,7 @@ public class SumasAleatorias {
     private int intentos = 0;
     private int aciertos = 0;
     private int fallados = 0;
+    private boolean presionado = false;
 
     public SumasAleatorias() {
         JFrame marco = new JFrame("Adivina el resultado de la suma");
@@ -72,42 +73,49 @@ public class SumasAleatorias {
                 int num2 = aleatorio.nextInt(1000);
                 cuadro1.setText(String.valueOf(num1));
                 cuadro2.setText(String.valueOf(num2));
+                presionado = true;
             }
         });
 
         boton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                do {
-                    String resultado = JOptionPane.showInputDialog("Teclea tu resultado");
-                    if (resultado != null && !resultado.isEmpty()){
-                        etiqueta5.setText(String.valueOf(intentos));
+                if (!presionado) {
+                    JOptionPane.showMessageDialog(null, "¡Error! Debes generar una suma primero");
+                }else {
+                    do {
+                        String resultado = JOptionPane.showInputDialog("Teclea tu resultado");
+                        if (resultado != null && !resultado.isEmpty()){
+                            etiqueta5.setText(String.valueOf(intentos));
 
-                        try {
-                            int num1 = Integer.parseInt(cuadro1.getText());
-                            int num2 = Integer.parseInt(cuadro2.getText());
-                            int suma = num1 + num2;
-                            int resultadoUsuario = Integer.parseInt(resultado);
-                            cuadro3.setText(String.valueOf(suma));
-                            if (suma == resultadoUsuario) {
-                                intentos++;
-                                aciertos++;
-                                etiqueta7.setText(String.valueOf(aciertos));
-                            } else {
-                                intentos++;
-                                fallados++;
-                                etiqueta9.setText(String.valueOf(fallados));
+                            try {
+                                int num1 = Integer.parseInt(cuadro1.getText());
+                                int num2 = Integer.parseInt(cuadro2.getText());
+                                int suma = num1 + num2;
+                                int resultadoUsuario = Integer.parseInt(resultado);
+                                cuadro3.setText(String.valueOf(suma));
+                                if (suma == resultadoUsuario) {
+                                    intentos++;
+                                    aciertos++;
+                                    etiqueta7.setText(String.valueOf(aciertos));
+                                } else {
+                                    intentos++;
+                                    fallados++;
+                                    etiqueta9.setText(String.valueOf(fallados));
+                                }
+                                break;
+                            }catch (NumberFormatException ex) {
+                                JOptionPane.showMessageDialog(null, "¡Error! Debes introducir un número entero");
                             }
+                        }else {
                             break;
-                        }catch (NumberFormatException ex) {
-                            JOptionPane.showMessageDialog(null, "¡Error! Debes introducir un número entero");
                         }
-                    }else {
-                        break;
-                    }
-                }while (true);
+                    }while (true);
 
-            }
+                }
+                }
+
+
         });
 
         boton3.addActionListener(new ActionListener() {
