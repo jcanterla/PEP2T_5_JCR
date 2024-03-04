@@ -81,7 +81,6 @@ public class SumasAleatorias {
                 do {
                     String resultado = JOptionPane.showInputDialog("Teclea tu resultado");
                     if (resultado != null && !resultado.isEmpty()){
-                        intentos++;
                         etiqueta5.setText(String.valueOf(intentos));
 
                         try {
@@ -91,9 +90,11 @@ public class SumasAleatorias {
                             int resultadoUsuario = Integer.parseInt(resultado);
                             cuadro3.setText(String.valueOf(suma));
                             if (suma == resultadoUsuario) {
+                                intentos++;
                                 aciertos++;
                                 etiqueta7.setText(String.valueOf(aciertos));
                             } else {
+                                intentos++;
                                 fallados++;
                                 etiqueta9.setText(String.valueOf(fallados));
                             }
